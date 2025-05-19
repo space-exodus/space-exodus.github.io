@@ -1,0 +1,42 @@
+DOCUMENTATION LICENSE AGREEMENT
+
+Preamble
+This Documentation License Agreement ("Agreement") governs the use of all textual, visual, and instructional materials ("Documentation") contained within this repository. By accessing or copying any portion of the Documentation, you agree to be bound by these terms. Violation of these terms grants the Licensor the right to pursue legal remedies including DMCA takedown notices and other applicable legal actions under jurisdictions where hosting providers operate.
+
+Definitions
+Documentation - All written materials, images, diagrams, API references, guides, and wiki-style content created by the author(s) and contained within this repository.
+Contribution - Any modifications, additions, or corrections submitted to this repository through any means (including Pull Requests), which automatically grants the Licensor a perpetual, non-exclusive license to use said contributions.
+Licensor - Space Exodus, the original author(s) and copyright holder(s) of the Documentation. Contact: maxim@bychkov.tech.
+
+Grant of Rights
+1. Permitted Uses:
+   - Sharing small excerpts (not exceeding 10% of total content) on social media platforms (Twitter, Facebook, etc.) and messaging services (Telegram, Discord, etc.) with:
+     a) Clear attribution to © Space Exodus
+     b) Direct link to original repository
+   - Quoting portions for discussion, commentary, or educational purposes with proper attribution
+   - Forking repository solely for the purpose of submitting corrections via Pull Requests
+
+2. Prohibited Uses Without Explicit Permission:
+   - Hosting or mirroring complete or substantial portions of the Documentation on any alternative platforms (including but not limited to wikis, knowledge bases, or standalone websites)
+   - Creating derivative works including but not limited to:
+     a) Translated versions
+     b) Adapted/alternative documentation
+     c) Tutorials/guides based on this Documentation
+   - Commercial use including but not limited to:
+     a) Paid courses or certifications
+     b) Subscription-based access
+     c) Incorporation into commercial products
+
+3. Contributions:
+   By submitting any Contribution, you grant the Licensor an irrevocable, worldwide, non-exclusive license to use, display, and modify the Contribution as part of the Documentation.
+
+Enforcement
+The Licensor reserves the right to:
+   - Issue takedown notices for unauthorized use
+   - Terminate access to violators
+   - Pursue legal action for willful violations
+
+Additional Terms
+   - Screenshots and code samples may be shared under same excerpt rules
+   - Any files with individual license terms supersede this agreement
+   - This license does not grant rights to any software code that may accompany the Documentation

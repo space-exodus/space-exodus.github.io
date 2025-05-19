@@ -1,0 +1,49 @@
+site_name: Разработка Space Exodus
+site_url: https://space-exodus.github.io/docs/
+
+theme:
+  name: material
+  language: ru
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.smartsymbols
+
+nav:
+  - Главная: index.md
+  - Разработка:
+    - development/index.md
+    - development/dev-rules.md
+    - development/qa.md
+  - Руководства:
+    - RobustToolbox:
+      - robust-toolbox/index.md
+      - robust-toolbox/ecs.md
