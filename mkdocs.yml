@@ -43,6 +43,9 @@ nav:
     - development/index.md
     - development/dev-rules.md
     - development/qa.md
+    - Регламент:
+      - development/regulations/index.md
+      - development/regulations/responsibility.md
   - Руководства:
     - RobustToolbox:
       - robust-toolbox/index.md
