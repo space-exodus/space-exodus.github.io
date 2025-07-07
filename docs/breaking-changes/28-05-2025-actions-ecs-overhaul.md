@@ -12,25 +12,25 @@
 
 1. Все компоненты действий (`InstantActionComponent` и др.) перенесены из `Content.Server` в `Content.Shared`.
 2. `BaseActionComponent` и `BaseTargetActionComponent` **удалены**. Вместо них теперь отдельные ECS-компоненты.  
-   Пример замены:  
-   Было: `if (action is BaseTargetActionComponent target)`  
-   Стало: `if (TryComp<TargetActionComponent>(actionId))`
+    Пример замены:
+    Было: `if (action is BaseTargetActionComponent target)`  
+    Стало: `if (TryComp<TargetActionComponent>(actionId))`
 3. Все `BaseActionComponent` заменены на `ActionComponent`. Больше кастов типов не выполняется.
 4. Для изменения `ActionComponent` используйте `ActionsSystem` вместо прямого доступа к полям.
 5. API переработано — теперь действия гибко настраиваются.
 6. Для назначения событий используйте `_actions.SetEvent()` вместо прямого присваивания.
 7. Все поля компонентов изменяйте **только через API**.
 8. В `mapping_actions.yml`:
-   - Убраны `BaseActionComponent` и имя.
-   - Теперь указывайте:  
-     - `action` — для прототипа действия,  
-     - `entity` — для создания прототипа,  
-     - `tileId` — для размещения тайла.  
-   *Кастомные mapping-действия нужно упростить.*
+    - Убраны `BaseActionComponent` и имя.
+    - Теперь указывайте:  
+        - `action` — для прототипа действия,  
+        - `entity` — для создания прототипа,  
+        - `tileId` — для размещения тайла.  
+    *Кастомные mapping-действия нужно упростить.*
 9. `EntityWorldTargetActionComponent` заменён двумя компонентами:
-   - `EntityTargetActionComponent` (с `Event = null`)
-   - `WorldTargetActionComponent`  
-   *Если добавить оба, `WorldActionEvent.Entity` может получить не-null сущность.*
+    - `EntityTargetActionComponent` (с `Event = null`)
+    - `WorldTargetActionComponent`  
+    *Если добавить оба, `WorldActionEvent.Entity` может получить не-null сущность.*
 10. Устаревшие `TryGetActionData`/`TryResolveActionData` заменены на `GetAction()` → возвращает `Entity<ActionComponent>?`.
 11. Все методы API теперь используют `Entity<T>` вместо пар `(actionId, action)`.
 12. В `ActionContainerSystem.RemoveAction`:
