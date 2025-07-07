@@ -46,6 +46,9 @@ nav:
     - Регламент:
       - development/regulations/index.md
       - development/regulations/responsibility.md
+    - Критические изменения:
+      - breaking-changes/index.md
+      - breaking-changes/28-05-2025-actions-ecs-overhaul.md
   - Руководства:
     - RobustToolbox:
       - robust-toolbox/index.md
