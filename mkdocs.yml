@@ -20,11 +20,17 @@ plugins:
       lang:
         - en
         - ru
+  - mermaid2
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - attr_list
   - md_in_html
   - toc:
