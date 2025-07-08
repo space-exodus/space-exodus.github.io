@@ -51,7 +51,9 @@ nav:
       - breaking-changes/28-05-2025-actions-ecs-overhaul.md
   - Руководства:
     - Разработка:
-      - development/ss14/eui.md
+      - development/ss14/ui/eui.md
+      - development/ss14/ui/ui-survival.md
     - RobustToolbox:
       - development/robust-toolbox/index.md
       - development/robust-toolbox/ecs.md
+      - development/robust-toolbox/basic-ui.md
