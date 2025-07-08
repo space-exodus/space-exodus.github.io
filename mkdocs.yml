@@ -22,6 +22,8 @@ plugins:
         - ru
   - mermaid2
 
+copyright: 'Принадлежит и поддерживается Space Exodus. Распространяется под <a style="color: var(--md-typeset-a-color);" href="https://github.com/space-exodus/space-exodus.github.io/blob/master/LICENSE">проприетарной лицензией</a>.'
+
 markdown_extensions:
   - admonition
   - pymdownx.details
