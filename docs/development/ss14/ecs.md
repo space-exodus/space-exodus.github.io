@@ -74,8 +74,7 @@ namespace Content.Server.Exodus.BluespaceJaunter;
 [RegisterComponent]
 public sealed partial class BluespaceJaunterComponent : Component
 {
-    [DataField]
-    public string HelloWorld = "Hello, World!";
+    [DataField] public float TeleportDelay = 2.0f;
 }
 ```
 По сути дела, вы просто добавляете свойство, к которому добавляется аннотация `DataField`. Данная аннотация, очевидно, нужна для того, чтобы игровой движок узнал о существовании нашего поля. Стоит знать, что для работы с этим полем нам, как разработчикам, эта аннотация не требуется, но показав это поле движку движок предоставляет вам:
@@ -86,9 +85,9 @@ public sealed partial class BluespaceJaunterComponent : Component
   id: SomeEntity
   components:
   - type: BluespaceJaunter
-    helloWorld: "Other Hello World!"
+    teleportDelay: 4.0
 ```
-Как вы могли заметить, окончание "Component" автоматически убирается, а название свойства указывается с нижнего регистра, если вы хотите, чтобы в коде свойство называлось одним образом, а в прототипе другим, то вы можете передать в аннотацию `DataField` название: `[DataField("str")]` и тогда заместо "`helloWorld`" в прототипе вам потребуется писать "`str`". Вы также можете сделать это поле **обязательным** для указания в прототипе, если в прототипе это поле указано не будет, то движок создаст ошибку и данная сущность зарегистрирована не будет. Делается это посредством: `[DataField(required: true)]`, при комбинировании с названием: `[DataField("str", required: true)]`.
+Как вы могли заметить, окончание "Component" автоматически убирается, а название свойства указывается с нижнего регистра, если вы хотите, чтобы в коде свойство называлось одним образом, а в прототипе другим, то вы можете передать в аннотацию `DataField` название: `[DataField("delay")]` и тогда заместо "`teleportDelay`" в прототипе вам потребуется писать "`delay`". Вы также можете сделать это поле **обязательным** для указания в прототипе, если в прототипе это поле указано не будет, то движок создаст ошибку и данная сущность зарегистрирована не будет. Делается это посредством: `[DataField(required: true)]`, при комбинировании с названием: `[DataField("delay", required: true)]`.
 - Во вторых, инструменты для синхронизации данных, если этот компонент является сетевым. Здесь я подробно этот момент описывать не буду, а в отдельном руководстве, которое появится в будущем, описывающим работу с сетями (как только это станет актуально, я отредактирую текущее руководство и прикреплю ссылку).
 
 ### Шаг 2. Система
@@ -181,7 +180,7 @@ public sealed partial class BluespaceJaunterSystem : EntitySystem
         var tile = GetRandomTile(station);
 
         // непосредственная телепортация
-        _transform.SetCoordinates(station, new EntityCoordinates(station, tile.GridIndices));
+        _transform.SetCoordinates(ev.User, new EntityCoordinates(station, tile.GridIndices));
     }
 
     // логика получения станции декомпозирована в отдельный метод на случай необходимости в большем количестве логики
@@ -194,7 +193,7 @@ public sealed partial class BluespaceJaunterSystem : EntitySystem
         // Обычно, у нас невозможна ситуация, когда блюспейс-джаунтер будет активирован без станции,
         // но мы должны обработать такую ситуацию, если она предусмотрена технически, чтобы не произошло критических ошибок
         if (stations.Count == 0) 
-            return;
+            return false;
 
         // технически у нас предусмотрена возможность наличия множества станций, но геймплейно - нет, у нас нет в условии задания уточнений про множество станций, так что просто возьмём самую первую из списка
         var stationUid = stations.First();
@@ -222,7 +221,13 @@ public sealed partial class BluespaceJaunterSystem : EntitySystem
 ```yaml
 - type: entity
   id: BluespaceJaunter
+  name: bluespace jaunter
+  description: A device that uses experimental bluespace technology to teleport the user to a random location on the station.
   components:
+  - type: Item
+  - type: Sprite
+    sprite: Objects/Tools/jumper.rsi
+    state: icon
   - type: BluespaceJaunter
 ```
 Все остальные свойства вы можете выбрать на своё усмотрение.
