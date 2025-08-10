@@ -62,6 +62,7 @@ nav:
     - Разработка:
       - development/ss14/ui/eui.md
       - development/ss14/ui/ui-survival.md
+      - development/ss14/ecs.md
     - RobustToolbox:
       - development/robust-toolbox/index.md
       - development/robust-toolbox/ecs.md
