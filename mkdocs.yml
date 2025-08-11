@@ -65,6 +65,7 @@ nav:
       - development/guides/basic-ui.md
   - QA:
     - qa/index.md
+    - qa/documentation.md
   - LVL-дизайн:
     - mapping/index.md
   - Арт-Дизайн:
