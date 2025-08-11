@@ -1,7 +1,3 @@
----
-title: Руководство по ECS
----
-
 # Entity Components Systems (ECS)
 
 Добро пожаловать в руководство по ECS. Данное руководство рассчитано на новичков и содержит лишь азы необходимые для работы.
@@ -164,6 +160,7 @@ public sealed partial class BluespaceJaunterSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapSystem _map = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     public override void Initialize()
     {

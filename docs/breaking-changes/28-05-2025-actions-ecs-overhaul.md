@@ -1,20 +1,18 @@
 # Рефакторинг Actions под архитектуру ECS (28.05.2025)
 
 ## Изменения в Space Exodus
+
 - В `NPCCombatSystem.Abilities.TryUseAction`:
     - Убрали дублирующий код проверки действий. Теперь используется только `ActionValidateEvent` из `ActionSystem`.
     - Отключён автоматический поворот NPC к цели. Если нужно — используйте `ActionComponent.RotateOnUse`.
 
 ## Изменения в официальной сборке
 
-!!! warning "Предупреждение"
-    Этот раздел ещё не завершён и может содержать ошибки. При неясностях сверяйтесь с [оригиналом](#_2).
-
 1. Все компоненты действий (`InstantActionComponent` и др.) перенесены из `Content.Server` в `Content.Shared`.
-2. `BaseActionComponent` и `BaseTargetActionComponent` **удалены**. Вместо них теперь отдельные ECS-компоненты.  
-    Пример замены:
-    Было: `if (action is BaseTargetActionComponent target)`  
-    Стало: `if (TryComp<TargetActionComponent>(actionId))`
+2. `BaseActionComponent` и `BaseTargetActionComponent` **удалены**. Вместо них теперь отдельные ECS-компоненты.<br>
+    Пример замены:<br>
+    Было: `if (action is BaseTargetActionComponent target)`<br>
+    Стало: `if (TryComp<TargetActionComponent>(actionId))`<br>
 3. Все `BaseActionComponent` заменены на `ActionComponent`. Больше кастов типов не выполняется.
 4. Для изменения `ActionComponent` используйте `ActionsSystem` вместо прямого доступа к полям.
 5. API переработано — теперь действия гибко настраиваются.
@@ -22,19 +20,19 @@
 7. Все поля компонентов изменяйте **только через API**.
 8. В `mapping_actions.yml`:
     - Убраны `BaseActionComponent` и имя.
-    - Теперь указывайте:  
-        - `action` — для прототипа действия,  
-        - `entity` — для создания прототипа,  
-        - `tileId` — для размещения тайла.  
-    *Кастомные mapping-действия нужно упростить.*
+    - Теперь указывайте:
+        - `action` — для прототипа действия,
+        - `entity` — для создания прототипа,
+        - `tileId` — для размещения тайла.<br>
 9. `EntityWorldTargetActionComponent` заменён двумя компонентами:
     - `EntityTargetActionComponent` (с `Event = null`)
     - `WorldTargetActionComponent`  
-    *Если добавить оба, `WorldActionEvent.Entity` может получить не-null сущность.*
-10. Устаревшие `TryGetActionData`/`TryResolveActionData` заменены на `GetAction()` → возвращает `Entity<ActionComponent>?`.
+    *Когда указаны оба, то `WorldActionEvent.Entity` будет получить non-null сущность.*
+10. Устаревшие `TryGetActionData`/`TryResolveActionData` заменены на `GetAction()` -> возвращает `Entity<ActionComponent>?`.
 11. Все методы API теперь используют `Entity<T>` вместо пар `(actionId, action)`.
 12. В `ActionContainerSystem.RemoveAction`:
     - Теперь принимает `Entity<ActionComponent?>?` вместо отдельных аргументов.
+
 *Остальное API системы не изменилось.*
 
 ### Оригинальный текст изменений в официальной сборке

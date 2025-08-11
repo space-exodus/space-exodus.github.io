@@ -51,19 +51,23 @@ nav:
   - Разработка:
     - development/index.md
     - development/dev-rules.md
-    - development/qa.md
+    - development/prototypes.md
     - Регламент:
-      - development/regulations/index.md
-      - development/regulations/responsibility.md
+      - Введение: development/regulations/index.md
+      - Ответственность разработки: development/regulations/responsibility.md
     - Критические изменения:
       - breaking-changes/index.md
       - breaking-changes/28-05-2025-actions-ecs-overhaul.md
-  - Руководства:
-    - Разработка:
-      - development/ss14/ui/eui.md
-      - development/ss14/ui/ui-survival.md
-      - development/ss14/ecs.md
-    - RobustToolbox:
-      - development/robust-toolbox/index.md
-      - development/robust-toolbox/ecs.md
-      - development/robust-toolbox/basic-ui.md
+    - Руководства:
+      - development/guides/eui.md
+      - development/guides/ui-survival.md
+      - Руководство по ECS: development/guides/ecs.md
+      - development/guides/basic-ui.md
+  - QA:
+    - qa/index.md
+  - LVL-дизайн:
+    - mapping/index.md
+  - Арт-Дизайн:
+    - spriting/index.md
+  - Редактура вики:
+    - wiki/index.md
