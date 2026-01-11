@@ -72,3 +72,11 @@ nav:
     - spriting/index.md
   - Редактура вики:
     - wiki/index.md
+  - Лор:
+    - lore/index.md
+    - Монолит:
+      - lore/monolith/index.md
+      - lore/monolith/basics.md
+      - lore/monolith/PhaethonDynasty.md
+      - lore/monolith/TransSolarFederation.md
+      - lore/monolith/UnitedSovietSocialistPlanets.md
