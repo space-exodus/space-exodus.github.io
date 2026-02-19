@@ -48,16 +48,20 @@ Console.WriteLine($"1+1 will be equal to: {a}");
 
 При публикации своего PR, вы должны согласиться с условиями лицензии CLA, я уверен, что её условия вам уже объяснили, однако, если нет, то её суть кратко описана [здесь](../#cla).
 
-Файлы `.cs` и `.xaml` добавляемые в папки обозначенные в пункте "Регионы изменений" должны иметь в самом верху следующий комментарий: `© Space Exodus, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/space-exodus/space-station-14/master/CLA.txt`. Это дополнительное подтверждение того, что контент Space Exodus находится под CLA.
+Файлы `.cs` и `.xaml` добавляемые в папки обозначенные в пункте "Регионы изменений" должны иметь в самом верху следующий комментарий: `(c) Space Exodus Team - EXDS-RL with CLA`. Это подтверждение того, что контент Space Exodus находится под Exodus Restrictive License и авторы контента согласились с CLA.
 
 Примеры:
 
 * `*.cs`:
 ```c#
-// © Space Exodus, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/space-exodus/space-station-14/master/CLA.txt
+// (c) Space Exodus Team - EXDS-RL with CLA
+// Authors: Lokilife
 ```
 
 * `*.xaml`:
 ```xaml
-<!-- © Space Exodus, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/space-exodus/space-station-14/master/CLA.txt -->
+<!--
+(c) Space Exodus Team - EXDS-RL with CLA
+Authors: Lokilife
+-->
 ```

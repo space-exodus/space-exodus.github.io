@@ -52,12 +52,8 @@ nav:
     - development/index.md
     - development/dev-rules.md
     - development/prototypes.md
-    - Регламент:
-      - Введение: development/regulations/index.md
-      - Ответственность разработки: development/regulations/responsibility.md
-    - Критические изменения:
-      - breaking-changes/index.md
-      - breaking-changes/28-05-2025-actions-ecs-overhaul.md
+    # - Критические изменения:
+    #   - breaking-changes/index.md
     - Руководства:
       - development/guides/eui.md
       - development/guides/ui-survival.md
@@ -72,11 +68,3 @@ nav:
     - spriting/index.md
   - Редактура вики:
     - wiki/index.md
-  - Лор:
-    - lore/index.md
-    - Монолит:
-      - lore/monolith/index.md
-      - lore/monolith/basics.md
-      - lore/monolith/PhaethonDynasty.md
-      - lore/monolith/TransSolarFederation.md
-      - lore/monolith/UnitedSovietSocialistPlanets.md
